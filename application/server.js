@@ -1,10 +1,20 @@
 var user = require('../entity/user.js');
 
-var taras = new user.User("taras");
-var andriy = new user.User("andriy");
+function run() {
+    var andriy = new user.User("andriy");
+    var taras = new user.User("taras");
 
-taras.hello(andriy);
+    taras.hello(andriy);
+
+    var number = new RandNumber();
+    console.log("Generated random number -> " + number.getRandom());
+}
+
+if (module.parent) {
+    exports.run = run();
+} else {
+    run();
+}
 
 
-var number = new RandNumber();
-console.log("Generated random number -> " + number.getRandom());
+console.log(module.parent);
