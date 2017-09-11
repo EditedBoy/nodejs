@@ -1,4 +1,4 @@
-let fs = require('fs');
+let fs = require('src/web-server/streams/fs');
 
 // fs.ReadStream наслідується від stream.Readable
 // let stream = new fs.ReadStream(__filename, {encoding: 'utf-8'});

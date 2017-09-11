@@ -22,4 +22,4 @@ exports.publish = function (message) {
 
 setInterval(function () {
     console.log("Clients -> " + clients.length);
-}, 2000);
+}, 5000);

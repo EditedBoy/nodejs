@@ -14,11 +14,12 @@ http.createServer(function (request, response) {
             break;
         case '/publish':
             let body = '';
-
             request
                 .on('readable', function () {
-                    body += request.read();
-
+                    let partMessage = request.read();
+                    if (partMessage) {
+                        body += partMessage;
+                    }
                     if (body.length > 1e4) {
                         response.statusCode = 413;
                         response.end("Your message is to big")

@@ -1,7 +1,7 @@
 // Поток відповіді (response)
 
 let http = require('http');
-let fs = require('fs');
+let fs = require('src/web-server/streams/fs');
 
 new http.Server(function (request, response) {
 
