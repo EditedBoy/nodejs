@@ -6,7 +6,7 @@ exports.subscribe = function (request, response) {
     clients.push(response);
 
     response.on('close', function () {
-        clients.splice(clients.indexOf(res), 1);
+        clients.splice(clients.indexOf(response), 1);
     })
 };
 
@@ -21,5 +21,5 @@ exports.publish = function (message) {
 };
 
 setInterval(function () {
-    console.log(clients.length)
+    console.log("Clients -> " + clients.length);
 }, 2000);
